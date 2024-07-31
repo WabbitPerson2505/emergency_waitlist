@@ -1,3 +1,6 @@
+# Introduction
+A simple web app to help a hospital in managing triages for patients requesting treatments.
+
 # How to setup
 Make sure when downloading to keep the file/directory structure as is to ensure the code works.
 
