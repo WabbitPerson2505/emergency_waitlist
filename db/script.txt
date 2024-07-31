@@ -1,0 +1,10 @@
+//note the path of your files on your computer/where you setup the server
+
+console for psql:
+psql -U postgres < .\db\schema.sql
+psql -U postgres < .\db\seed.sql
+
+console for php:
+cd public
+php -S localhost:8000 -c php.ini
+
