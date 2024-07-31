@@ -5,7 +5,7 @@ session_start();
 
 $host = "localhost";
 $port = 5432;
-$dbname = "testapp";
+$dbname = "postgres";
 $user = "postgres";
 $password = "postgres";
 

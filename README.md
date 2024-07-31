@@ -11,9 +11,13 @@ Make sure when downloading to keep the file/directory structure as is to ensure 
 **Warning this app was setup on windows therefore the files within public are important, especially the php.ini file.
 If you wish to run on another operating system then the setup might differ.**
 
+**[scripts](/db/script.txt) contains the commands for but we do not know the developer installation environment and any previous setup therefore we recommend to adapt the commands especially the relative/absolute paths of the files.** 
+
 This is a simple web app to manage the triage of a hospital.
 
 **Note there might be some discrepancy with the wait time since the PostgreSQL server is datetime is saved on local time while datetime in php it is calculated on a different time (unix) therefore there will be some difference with the time and the calculations.**
+
+**The _config.php file contains the configurations to access and query the PostgreSQL database. Since setup is different from environment to environment and from user to user then it is recommended you change these settings when you**
 
 ## Requirements
 You will need these:
@@ -28,7 +32,7 @@ You will need these:
 	for postgresl
 - **3.** Start the server. The server is running by default but if it is not, then enable it in the services tab.
 - **4.** Open a console and log in the psql interface with the command psql -U postgres (the password by default is postgres if you don't change it). Then exit the interface using command quit;
-- **5.** Optional, create a database.
+- **5.** Optional, create a database. The command in the psql console interface is CREATE DATABASE name;
 - **6.** Create the tables and fill the tables with base data using the scripts provided in 
 	[db_schema](/db/schema.sql)
 	[db_seed](/db/seed.sql)
@@ -39,7 +43,8 @@ Note: I have already created another database called testapp but by default, the
 	psql -U postgres < .\db\schema.sql
 	psql -U postgres < .\db\seed.sql
 - **7.** optional, you may use pgadmin to manage the database as a graphical interface.
-- **8.** Open a command in the public directory and start the php server using the command php -S localhost:8000 -c php.ini.
+- **8.** Change the settings in [config](/public/_config.php) file to match the settings for your postgres server settings such as the user and the password for that user along with the database to connect.
+- **9.** Open a command in the public directory and start the php server using the command php -S localhost:8000 -c php.ini.
 
 **Note the [db_schema](/db/script.txt) contains the commands to run in the console. Depending on the paths on your system, you may not need some of them. Therefore I recommend adapting commands to your system for the paths.**
 
